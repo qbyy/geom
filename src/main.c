@@ -7,7 +7,7 @@ int main()
 {
     int a, b, c, x1, y1, r1, x2, y2, r2;
     float p, s;
-	printf("Enter x, y, radius of 1-st circle: ");
+    printf("Enter x, y, radius of 1-st circle: ");
     scanf("%d %d %d", &x1, &y1, &r1);
     p = PerimetrC(r1, PI);
     s = SquareC(r1, PI);
