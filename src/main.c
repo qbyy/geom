@@ -1,38 +1,35 @@
-#include "func.h"
+#include "foo.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+const float PI = 3.141592;
 int main()
 {
-    float x1, x2, y1, y2, r1, r2;
-    printf("Circle №1 : ");
-    scanf("%f%f%f", &x1, &y1, &r1);
+    int a, b, c, x1, y1, r1, x2, y2, r2;
+    float p, s;
 
-    printf("Circle №2 : ");
-    scanf("%f%f%f", &x2, &y2, &r2);
+    printf("Enter x, y, radius of 1-st circle: ");
+    scanf("%d %d %d", &x1, &y1, &r1);
+    p = PerimetrC(r1, PI);
+    s = SquareC(r1, PI);
+    printf("Perimetr = %f Square = %f\n", p, s);
 
-    float r = 0, peresechenie = 0;
+    printf("Enter x, y, radius of 2-nd circle: ");
+    scanf("%d %d %d", &x2, &y2, &r2);
+    p = PerimetrC(r2, PI);
+    s = SquareC(r2, PI);
+    printf("Perimetr = %f Square = %f\n", p, s);
 
-    Math(x1, y1, r1, x2, y2, r2);
+    if (Cross(x1, y1, r1, x2, y2, r2) == 1) {
+        printf("1 and 2 circules are cross\n");
+    } else {
+        printf("1 and 2 circules are not cross\n");
+    }
 
-    printf("\n 1|Circle (%5.2f %5.2f %5.2f)", x1, y1, r1);
-    printf("\n Perimetr = %5.2f", 2 * 3.14 * r1);
-    printf("\n Plochad = %5.2f", 3.14 * r1 * r1);
-
-    if (r >= peresechenie)
-        printf("\n Peresekaetsa s Circle №2");
-    else
-        printf("\n  Ne peresekaetsa");
-
-    printf("\n 2|Circle (%5.2f %5.2f %5.2f)", x2, y2, r2);
-    printf("\n Perimetr = %5.2f", 2 * 3.14 * r2);
-    printf("\n Plochad = %5.2f", 3.14 * r2 * r2);
-
-    if (r >= peresechenie)
-        printf("\n Peresekaetsa s Circle №1 \n ");
-    else
-        printf("\n  Ne peresekaetsa\n ");
-
+    printf("Enter sides of triangle(a,b,c):");
+    scanf("%d %d %d", &a, &b, &c);
+    p = PerimetrT(a, b, c);
+    s = SquareT(a, b, c);
+    printf("Perimetr = %f Square = %f\n", p, s);
     return 0;
 }
